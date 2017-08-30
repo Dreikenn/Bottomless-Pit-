@@ -14,12 +14,14 @@ public class ControlDePersonaje : MonoBehaviour
     private Animator animacion;
     private Rigidbody rb;
 
+	// Codigo para los Saltos
+	public AudioSource Salto;
+
 
     void Awake()
     {
         animacion = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-
     }
 
 
@@ -50,6 +52,7 @@ public class ControlDePersonaje : MonoBehaviour
         {
             {
                 salto();
+				Salto.Play();
             }
             tocarsuelo = false;
         }
@@ -70,5 +73,6 @@ public class ControlDePersonaje : MonoBehaviour
     {
         tocarsuelo = true;
     }
+
 }
 
