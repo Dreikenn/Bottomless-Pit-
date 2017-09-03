@@ -18,7 +18,7 @@ public class ControlDePersonaje : MonoBehaviour
 	public AudioSource Salto;
 
 
-    void Awake()
+    void Update()
     {
         animacion = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -48,7 +48,7 @@ public class ControlDePersonaje : MonoBehaviour
             animacion.SetFloat("velocidad",Mathf.Abs (precionar));
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+		if (Input.GetKeyDown(KeyCode.Space))
         {
             {
                 salto();
