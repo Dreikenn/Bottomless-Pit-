@@ -10,6 +10,7 @@ public class Camara : MonoBehaviour {
 
 
 	void Update () {
+
 	transform.position = p.position + offset;	
 
 		
