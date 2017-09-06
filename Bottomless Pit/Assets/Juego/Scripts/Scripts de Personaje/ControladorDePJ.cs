@@ -10,12 +10,15 @@ public class ControladorDePJ : MonoBehaviour {
     private float FuerzaDEGravedad;
     public float velocidad;
     public float FuerzadeSalto;
-    
-
-
 
     public float Gravedad;
 
+
+    //daño por caida
+    private float UltimaPosY = 0f;
+    private float DistancaiDeMuerte = 0f;
+    public float AlturaDeMuerte;
+    public Transform PJ;
 
 
 
@@ -24,13 +27,33 @@ public class ControladorDePJ : MonoBehaviour {
 
         movimiento = GetComponent<CharacterController>();
         animacion = GetComponent<Animator>();
+
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
 
-       
+
+        //animacion 
+        float precionar = Input.GetAxis("Horizontal");
+
+        if (precionar > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            animacion.SetFloat("velocidad", precionar);
+
+
+
+        }
+        if (precionar < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, -1);
+            animacion.SetFloat("velocidad", Mathf.Abs(precionar));
+        }
+
+
+        //saltar
         if (movimiento.isGrounded)
         {
 
@@ -55,21 +78,42 @@ public class ControladorDePJ : MonoBehaviour {
 
         Vector3 mov = Vector3.zero;
         mov.y = FuerzaDEGravedad;
-       //velocidad = Input.GetAxis("Horizontal");
+       
        mov += transform.forward * velocidad * Input.GetAxis("Horizontal");
         
-        // animacion.SetFloat("velocidad", velocidad);
-
-
-
-
-
 
         movimiento.Move(mov * Time.deltaTime);
 
-
         print(movimiento.isGrounded);
-      
 
+        //daño por caida
+
+        if (UltimaPosY > PJ.transform.position.y)
+        {
+            DistancaiDeMuerte += UltimaPosY - PJ.transform.position.y;
+        }
+        UltimaPosY = PJ.transform.position.y;
+
+        if (DistancaiDeMuerte >= AlturaDeMuerte && movimiento.isGrounded)
+        {
+            morir();
+            ResetCaida();
+        }
+        if (DistancaiDeMuerte <= AlturaDeMuerte && movimiento.isGrounded)
+        {
+            ResetCaida();
+        }
+
+
+    }
+    void ResetCaida()
+    {
+        DistancaiDeMuerte = 0;
+        UltimaPosY = 0;
+    }
+
+    void morir()
+    {
+        Destroy(gameObject);
     }
 }
