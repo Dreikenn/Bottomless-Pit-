@@ -116,4 +116,16 @@ public class ControladorDePJ : MonoBehaviour {
     {
         Destroy(gameObject);
     }
+	//morir por enemigos
+	void OnTriggerEnter(Collider col)
+	{
+		movimientobala v = col.GetComponent<movimientobala> ();
+		Patrulla vz = col.GetComponent<Patrulla> ();
+				if (v != null) 
+		{
+			Destroy (gameObject);}
+		if (vz != null) 
+		{
+			Destroy (gameObject);}
+	}
 }

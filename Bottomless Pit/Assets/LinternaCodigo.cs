@@ -6,6 +6,7 @@ public class LinternaCodigo : MonoBehaviour {
 
 	public GameObject Linterna;
 
+
 	[SerializeField]
 
 	private bool Encender = false;
