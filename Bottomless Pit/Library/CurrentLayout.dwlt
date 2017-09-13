@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 0
     width: 480
     height: 676
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -146,10 +146,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 779, y: 492}
-  m_MaxSize: {x: 16004, y: 14042}
+  m_MinSize: {x: 783, y: 492}
+  m_MaxSize: {x: 16008, y: 14042}
   vertical: 1
-  controlID: 11
+  controlID: 93
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,10 +172,10 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 676
-  m_MinSize: {x: 779, y: 221}
-  m_MaxSize: {x: 16004, y: 4021}
+  m_MinSize: {x: 783, y: 221}
+  m_MaxSize: {x: 16008, y: 4021}
   vertical: 0
-  controlID: 12
+  controlID: 94
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -480,20 +480,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Juego/Scripts/Scripts de Personaje
+    - Assets/Juego/Personaje/PJ/ThirdPersonCharacter/Textures
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Juego/Scripts/Scripts de Personaje
+  - Assets/Juego/Personaje/PJ/ThirdPersonCharacter/Textures
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\enzom\OneDrive\Documentos\GitHub\Bottomless-Pit-\Bottomless
     Pit
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 343}
-    m_SelectedIDs: 802e0000
-    m_LastClickedID: 11904
-    m_ExpandedIDs: 00000000882d0000922d0000bc2d0000ca2d0000cc2d0000f82d0000262e00002c2e00007a2e00007e2e0000b42e0000c02e000026340000283400002a3400002c3400002e340000ffffff7f
+    scrollPos: {x: 0, y: 87}
+    m_SelectedIDs: 94270000
+    m_LastClickedID: 10132
+    m_ExpandedIDs: 0000000022260000782600009026000092260000d62600001827000022270000b0270000b62700000c28000018280000282800002e280000f82e0000fa2e0000fc2e0000fe2e0000002f0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -521,7 +521,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000882d0000bc2d0000cc2d0000f82d0000262e00007a2e00007e2e0000b42e0000c02e000026340000283400002a3400002c3400002e340000
+    m_ExpandedIDs: 0000000022260000782600009026000092260000d62600001827000022270000b0270000b62700000c28000018280000282800002e280000f82e0000fa2e0000fc2e0000fe2e0000002f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -548,7 +548,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 26e1ffff8e25000010260000fee6ffff7eb8ffffa82500002c2900008c250000d2260000da260000ca260000e226000068250000502500007e25000076250000e424000054250000d8250000b22a00000a2500007c250000ee24000088250000b02c0000bab5ffffc2b300009825000038cdffff8231000042360000083500002e350000062800003a2500008e260000242d00005a250000000000006c2800006c2600007c290000c8270000f249feffe22a0000f6380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -639,21 +639,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: f80be2ff6036e2ff244be2ff94ccffff00000000002f000048300000c8300000123100001c310000203200002e320000
+    m_ExpandedIDs: 88f5ffff56f6ffff66f7ffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: pared1 (3)
-      m_OriginalName: pared1 (3)
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 12182
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -689,14 +689,14 @@ MonoBehaviour:
     width: 476
     height: 655
   m_SceneLighting: 0
-  lastFramingTime: 10193.2726881865
+  lastFramingTime: 2214.6543453734503
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.8348336, y: 52.676598, z: -12.32412}
+    m_Target: {x: 4.070404, y: 50.355034, z: -0.72757834}
     speed: 2
-    m_Value: {x: -4.8348336, y: 52.676598, z: -12.32412}
+    m_Value: {x: 4.070404, y: 50.355034, z: -0.72757834}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -719,13 +719,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.008811843, y: 0.9127541, z: -0.019722236, w: -0.40793797}
+    m_Target: {x: -0.12600586, y: 0.7303117, z: -0.14015497, w: -0.6566003}
     speed: 2
-    m_Value: {x: -0.008811843, y: 0.9127541, z: -0.019722236, w: -0.40793797}
+    m_Value: {x: -0.12600586, y: 0.7303117, z: -0.14015497, w: -0.6566003}
   m_Size:
-    m_Target: 12.36805
+    m_Target: 4.550794
     speed: 2
-    m_Value: 12.36805
+    m_Value: 4.550794
   m_Ortho:
     m_Target: 0
     speed: 2
