@@ -5,6 +5,7 @@ using UnityEngine;
 public class LinternaCodigo : MonoBehaviour {
 
 	public GameObject Linterna;
+    
 
 
 	[SerializeField]
@@ -21,10 +22,30 @@ public class LinternaCodigo : MonoBehaviour {
 
 	private float EnergiaMin = 0f;
 
+
+    public float z, x, y;
+    
 	void Update () 
 	{
-		//Si la linterna esta prendida, la energia que guarda la bateria va a ir bajando con el tiempo.
-		if (Encender == true)
+        //Si la linterna esta prendida, la energia que guarda la bateria va a ir bajando con el tiempo.
+        float precionar = Input.GetAxis("Horizontal");
+
+        if (precionar > 0)
+        {
+            transform.localScale = new Vector3(x, y, z);
+            
+
+
+
+        }
+        if (precionar < 0)
+        {
+            transform.localScale = new Vector3(x, -y, z);
+            
+
+
+        }
+        if (Encender == true)
 		{
 			bateria -= 1 * Time.deltaTime;
 		}
