@@ -182,7 +182,7 @@ public class ControladorDePJ : MonoBehaviour {
 
     void morir()
     {
-        Destroy(gameObject);
+		Application.LoadLevel("Muerto");
     }
 	//morir por enemigos
 

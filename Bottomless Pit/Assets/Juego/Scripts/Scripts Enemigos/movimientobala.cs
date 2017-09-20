@@ -13,7 +13,7 @@ public class movimientobala : MonoBehaviour {
 	}
 	void OnTriggerEnter(){
 
-		Destroy(gameObject);
+		Application.LoadLevel("Muerto");
 	}
 
 

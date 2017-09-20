@@ -11,7 +11,8 @@ public class Morir : MonoBehaviour {
 	{
 		if (other.tag == "Enemigo") 
 		{
-			Destroy (this.gameObject);
+
+			Application.LoadLevel("Muerto");
 		}
 	}
 }

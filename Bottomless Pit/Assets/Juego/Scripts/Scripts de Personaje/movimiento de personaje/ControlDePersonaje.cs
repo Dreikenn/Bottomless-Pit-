@@ -39,7 +39,7 @@ public class ControlDePersonaje : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
 
         float precionar = Input.GetAxis("Horizontal");
@@ -149,7 +149,8 @@ public class ControlDePersonaje : MonoBehaviour
     //insertar pantalla de derrota, animacion de emuerte y volver a cargar el ultimo nivel
     void morir()
     {
-        Destroy(gameObject);
+
+		Application.LoadLevel("Muerto");
     }
 
 

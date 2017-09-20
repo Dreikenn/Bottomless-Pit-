@@ -10,7 +10,8 @@ public class Vida : MonoBehaviour
 	{
 		if(cantidadVida <= 0)
 		{
-			Destroy (gameObject);
+
+			Application.LoadLevel("Muerto");
 		}
 	}
 }
