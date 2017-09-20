@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
 public class ControladorDePJ : MonoBehaviour {
 
     private CharacterController movimiento;
@@ -10,7 +13,7 @@ public class ControladorDePJ : MonoBehaviour {
     private float FuerzaDEGravedad;
     public float velocidad;
     public float FuerzadeSalto;
-
+    
     public float Gravedad;
 
 
@@ -20,21 +23,49 @@ public class ControladorDePJ : MonoBehaviour {
     public float AlturaDeMuerte;
     public Transform PJ;
 
+    //trepar
+    private bool Trepar;
+    public float velocidadAlTrepar;
+
+
 
 
     void Awake()
     {
-
+        
         movimiento = GetComponent<CharacterController>();
         animacion = GetComponent<Animator>();
 
     }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "climb")
+        {
+            Trepar = true;
+        }
 
+        if (Trepar == false)
+        {
+            movimientobala v = col.GetComponent<movimientobala>();
+            Patrulla vz = col.GetComponent<Patrulla>();
+            if (v != null)
+            {
+                Destroy(gameObject);
+            }
+            if (vz != null)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+
+
+    }
 
     void Update()
     {
-
-
+        
+        
         //animacion 
         float precionar = Input.GetAxis("Horizontal");
 
@@ -58,12 +89,13 @@ public class ControladorDePJ : MonoBehaviour {
         {
 
             FuerzaDEGravedad = 0;
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 FuerzaDEGravedad = FuerzadeSalto; 
 
             }
-            
+           
 
 
         }
@@ -80,7 +112,32 @@ public class ControladorDePJ : MonoBehaviour {
         mov.y = FuerzaDEGravedad;
        
        mov += transform.forward * velocidad * Input.GetAxis("Horizontal");
+        if (Input.GetKey(KeyCode.UpArrow) && Trepar == true)
+        {
+            
+            mov += transform.up * velocidadAlTrepar * Time.deltaTime;
+
+            FuerzaDEGravedad = 0;
+            Gravedad = 0;
+            
+        }
+        if (Input.GetKey(KeyCode.DownArrow) && Trepar == true)
+        {
+
+            mov -= transform.up * velocidadAlTrepar * Time.deltaTime;
+
+            FuerzaDEGravedad = 0;
+            Gravedad = 0;
+        }
+
+        if (Trepar == false)
+        {
+
+            Gravedad = 20;
+        }
         
+
+
 
         movimiento.Move(mov * Time.deltaTime);
 
@@ -106,6 +163,17 @@ public class ControladorDePJ : MonoBehaviour {
 
 
     }
+
+   
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "climb")
+        {
+            Trepar = false;
+        }
+    }
+
+
     void ResetCaida()
     {
         DistancaiDeMuerte = 0;
@@ -117,15 +185,13 @@ public class ControladorDePJ : MonoBehaviour {
         Destroy(gameObject);
     }
 	//morir por enemigos
-	void OnTriggerEnter(Collider col)
-	{
-		movimientobala v = col.GetComponent<movimientobala> ();
-		Patrulla vz = col.GetComponent<Patrulla> ();
-				if (v != null) 
-		{
-			Destroy (gameObject);}
-		if (vz != null) 
-		{
-			Destroy (gameObject);}
-	}
+
+   
+
+
+
+
+
+
+
 }

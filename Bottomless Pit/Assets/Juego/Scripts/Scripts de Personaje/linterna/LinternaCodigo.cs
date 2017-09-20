@@ -50,7 +50,7 @@ public class LinternaCodigo : MonoBehaviour {
 			bateria -= 1 * Time.deltaTime;
 		}
 
-		if(Input.GetKeyDown(KeyCode.Space))
+		if(Input.GetKeyDown("e"))
 		{
 			//Si apretamos Space y la luz esta encendida se va a apagar. Por eso se setea en falso.
 			if (Encender == true) 
