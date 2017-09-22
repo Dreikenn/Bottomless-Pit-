@@ -23,29 +23,32 @@ public class ControladorDePJ : MonoBehaviour {
     public float AlturaDeMuerte;
     public Transform PJ;
 
-    //trepar
-    private bool Trepar;
-    public float velocidadAlTrepar;
+    //Agacharce
+    private float DePie;
+    private float Agacharse;
+    
 
 
 
 
     void Awake()
     {
-        
         movimiento = GetComponent<CharacterController>();
         animacion = GetComponent<Animator>();
+        DePie = movimiento.height;
+        Agacharse = movimiento.height/2.5f;
+
 
     }
+ 
+
+
+
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "climb")
-        {
-            Trepar = true;
-        }
+       
 
-        if (Trepar == false)
-        {
+        
             movimientobala v = col.GetComponent<movimientobala>();
             Patrulla vz = col.GetComponent<Patrulla>();
             if (v != null)
@@ -56,7 +59,7 @@ public class ControladorDePJ : MonoBehaviour {
             {
                 Destroy(gameObject);
             }
-        }
+        
 
 
 
@@ -64,9 +67,11 @@ public class ControladorDePJ : MonoBehaviour {
 
     void Update()
     {
+
         
         
         //animacion 
+        
         float precionar = Input.GetAxis("Horizontal");
 
         if (precionar > 0)
@@ -83,14 +88,14 @@ public class ControladorDePJ : MonoBehaviour {
             animacion.SetFloat("velocidad", Mathf.Abs(precionar));
         }
 
-
+        
         //saltar
         if (movimiento.isGrounded)
         {
 
             FuerzaDEGravedad = 0;
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 FuerzaDEGravedad = FuerzadeSalto; 
 
@@ -99,49 +104,37 @@ public class ControladorDePJ : MonoBehaviour {
 
 
         }
-
-      
-
         
+
+
+
 
         FuerzaDEGravedad -= Gravedad * Time.deltaTime;
 
-
+        
 
         Vector3 mov = Vector3.zero;
         mov.y = FuerzaDEGravedad;
+        mov += transform.forward * velocidad * Input.GetAxis("Horizontal");
        
-       mov += transform.forward * velocidad * Input.GetAxis("Horizontal");
-        if (Input.GetKey(KeyCode.UpArrow) && Trepar == true)
-        {
-            
-            mov += transform.up * velocidadAlTrepar * Time.deltaTime;
-
-            FuerzaDEGravedad = 0;
-            Gravedad = 0;
-            
-        }
-        if (Input.GetKey(KeyCode.DownArrow) && Trepar == true)
-        {
-
-            mov -= transform.up * velocidadAlTrepar * Time.deltaTime;
-
-            FuerzaDEGravedad = 0;
-            Gravedad = 0;
-        }
-
-        if (Trepar == false)
-        {
-
-            Gravedad = 20;
-        }
+        movimiento.Move(mov * Time.deltaTime);
         
 
-
-
-        movimiento.Move(mov * Time.deltaTime);
-
         print(movimiento.isGrounded);
+
+        //agacharce
+        if(Input.GetKey(KeyCode.DownArrow))
+        {
+            agacharse();
+            animacion.SetBool("agachado", true);
+
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            pararse();
+            animacion.SetBool("agachado", false);
+        }
+       
 
         //daño por caida
 
@@ -160,17 +153,9 @@ public class ControladorDePJ : MonoBehaviour {
         {
             ResetCaida();
         }
+       
 
 
-    }
-
-   
-    private void OnTriggerExit(Collider col)
-    {
-        if (col.gameObject.tag == "climb")
-        {
-            Trepar = false;
-        }
     }
 
 
@@ -184,10 +169,34 @@ public class ControladorDePJ : MonoBehaviour {
     {
 		Application.LoadLevel("Muerto");
     }
-	//morir por enemigos
 
-   
+ 
+	
+    void agacharse()
+    {
+        if(movimiento.isGrounded)
+        {
+            movimiento.height = Agacharse;
+            movimiento.center = new Vector3(0f, 0.41f, 0f);
+            
 
+        }
+    }
+
+    void pararse()
+    {
+
+        transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
+
+        movimiento.center = new Vector3(0f, 0.82f, 0f);
+
+        movimiento.height = DePie;
+
+
+    }
+
+
+    
 
 
 

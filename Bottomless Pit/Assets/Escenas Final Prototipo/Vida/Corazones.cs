@@ -40,6 +40,7 @@ public class Corazones : MonoBehaviour {
     {
         GameObject[] hearts;
         hearts = GameObject.FindGameObjectsWithTag("Corazon");
+
         for (int i=0; i<hearts.Length; i++)
         {
             if (hearts[i].name == "Heart" + num)hearts[i].SetActive(estado);
