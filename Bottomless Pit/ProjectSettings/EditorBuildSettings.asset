@@ -8,18 +8,33 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Prototipo.unity
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/esceneas/Inicio.unity
     guid: 3d43320c52a781d429cf0716b93b663a
-  - enabled: 1
+  - enabled: 0
     path: Assets/esceneas/Prototipo.unity
     guid: f49eb240b8264324e8ecba8267f06c4e
-  - enabled: 1
+  - enabled: 0
     path: Assets/esceneas/Puzz.unity
     guid: bba5ddd83e667a2479f35cb4074151af
-  - enabled: 1
+  - enabled: 0
     path: Assets/esceneas/Muerto.unity
     guid: 838455f7273fa2a4ca183af4491478bd
-  - enabled: 1
+  - enabled: 0
     path: Assets/esceneas/Ganar.unity
     guid: d5134b120058ee246abcf9edc1e8b418
+  - enabled: 1
+    path: Assets/Escenas Final Prototipo/menuinicio.unity
+    guid: 57faa325bdee43d4c81ec4bf17bd8d25
+  - enabled: 1
+    path: Assets/Escenas Final Prototipo/Nivel1.unity
+    guid: 29ca528cce50012409f87d82871cae67
+  - enabled: 1
+    path: Assets/Escenas Final Prototipo/Nivel2.unity
+    guid: 09ce25a9d65bec94b9672293f80566ae
+  - enabled: 1
+    path: Assets/Escenas Final Prototipo/Nivel3.unity
+    guid: 2e7ac082421811441a3eb2c7adbce605
+  - enabled: 1
+    path: Assets/Escenas Final Prototipo/menumuerte.unity
+    guid: 00000000000000000000000000000000

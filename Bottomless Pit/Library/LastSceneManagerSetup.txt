@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Escenas Final Prototipo/Nivel3.unity
+- path: Assets/menuganar.unity
   isLoaded: 1
   isActive: 1

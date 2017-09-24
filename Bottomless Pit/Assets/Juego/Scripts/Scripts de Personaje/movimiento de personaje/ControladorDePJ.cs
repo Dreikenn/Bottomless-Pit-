@@ -167,7 +167,7 @@ public class ControladorDePJ : MonoBehaviour {
 
     void morir()
     {
-		Application.LoadLevel("Muerto");
+		Application.LoadLevel("menumuerte");
     }
 
  
