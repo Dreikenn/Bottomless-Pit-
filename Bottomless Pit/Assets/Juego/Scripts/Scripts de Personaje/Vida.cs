@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Vida : MonoBehaviour 
 {
- public float cantidadVida;
+ static public float cantidadVida;
 
 	void Update()
 	{

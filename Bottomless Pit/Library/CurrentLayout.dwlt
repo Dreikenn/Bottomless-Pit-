@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 10}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 332, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 46
+  controlID: 89
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 513
     height: 358
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -170,10 +170,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 683, y: 492}
+  m_MinSize: {x: 677, y: 471}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 11
+  controlID: 50
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,10 +195,10 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 358
-  m_MinSize: {x: 683, y: 221}
-  m_MaxSize: {x: 12008, y: 4021}
+  m_MinSize: {x: 677, y: 200}
+  m_MaxSize: {x: 12002, y: 4021}
   vertical: 0
-  controlID: 12
+  controlID: 51
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -217,8 +217,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 358
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -245,7 +245,7 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 685
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &11
 MonoBehaviour:
@@ -492,7 +492,7 @@ MonoBehaviour:
     width: 909
     height: 256
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: mas
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -512,10 +512,10 @@ MonoBehaviour:
   m_LastProjectPath: C:\Users\Garci\Documents\GitHub\Bottomless-Pit-\Bottomless Pit
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 49}
-    m_SelectedIDs: ea270000
-    m_LastClickedID: 10218
-    m_ExpandedIDs: 0000000044260000b0260000ca260000cc2600001a2700006a270000ea270000162800001c280000202800008428000090280000a2280000a82800005e2f0000602f0000622f0000642f0000662f000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 0000000044260000b0260000ca260000cc2600001a2700005e2700006a270000162800001c280000202800008428000090280000a2280000a82800001c2f00001e2f0000202f0000222f0000242f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -543,7 +543,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000044260000b0260000ca260000cc2600001a2700006a270000ea270000162800001c280000202800008428000090280000a2280000a82800005e2f0000602f0000622f0000642f0000662f0000
+    m_ExpandedIDs: 0000000044260000b0260000ca260000cc2600001a2700006a270000ea270000162800001c280000202800008428000090280000a2280000a82800001c2f00001e2f0000202f0000222f0000242f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -595,7 +595,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 81}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 297
 --- !u!114 &18
@@ -659,28 +659,28 @@ MonoBehaviour:
     height: 337
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 50280000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: e870faffd274faff6e79faff6429fcff60b4fcfff881fdff4016feff0251fffff0a9ffff46aeffff34bdffffd6efffff74f0ffff84f1ffff8ef1ffff28f3ffff40f3ffff52f3ffff1afcffff0000000088590000ea5b0000b4680000c46a0000fe8e00005c920000789b00004c9e000008a500006aa70000d8b60000e2b600001cb900006ab90000b8b9000060bb0000
+    m_ExpandedIDs: 7c36fdff023afdff82b6fefff4bbfeff08c3feff8acbfeffd8c3ffff1afcffff000000005032000044330000d63b000030470000fa490000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: MasVida
+      m_OriginalName: MasVida
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -160210
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
   m_ExpandedScenes:
-  - Nivel1
+  - Nivel3
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -711,14 +711,14 @@ MonoBehaviour:
     width: 509
     height: 337
   m_SceneLighting: 0
-  lastFramingTime: 2478.660349189088
+  lastFramingTime: 1610.9874542568218
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -19.162067, y: 43.327667, z: 0.41394687}
+    m_Target: {x: 12.801251, y: 50.100426, z: 9.071141}
     speed: 2
-    m_Value: {x: -19.162067, y: 43.327667, z: 0.41394687}
+    m_Value: {x: 12.801251, y: 50.100426, z: 9.071141}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -741,13 +741,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.13605727, y: 0.7222726, z: -0.14852771, w: -0.661627}
+    m_Target: {x: 0.033717476, y: 0.16385375, z: 0.0056046275, w: -0.9858923}
     speed: 2
-    m_Value: {x: -0.13605727, y: 0.7222726, z: -0.14852771, w: -0.661627}
+    m_Value: {x: 0.03371748, y: 0.16385376, z: 0.005604628, w: -0.98589236}
   m_Size:
-    m_Target: 30.428806
+    m_Target: 2.047906
     speed: 2
-    m_Value: 30.428806
+    m_Value: 2.047906
   m_Ortho:
     m_Target: 0
     speed: 2
