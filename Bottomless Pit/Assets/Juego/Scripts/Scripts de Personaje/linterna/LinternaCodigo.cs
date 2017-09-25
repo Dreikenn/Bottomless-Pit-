@@ -10,13 +10,13 @@ public class LinternaCodigo : MonoBehaviour {
 
 	[SerializeField]
 
-	private bool Encender = false;
+	public bool Encender = false;
 	//Esta variable es static para acceder a ella desde el otro codigo.
-	static public float bateria = 20f;
+	static public float bateria = 10f;
 
 	[SerializeField]
 
-	private float EnergiaMax = 20f;
+	private float EnergiaMax = 10f;
 
 	[SerializeField]
 
@@ -24,7 +24,7 @@ public class LinternaCodigo : MonoBehaviour {
 
 
     public float z, x, y;
-    
+
 	void Update () 
 	{
         //Si la linterna esta prendida, la energia que guarda la bateria va a ir bajando con el tiempo.

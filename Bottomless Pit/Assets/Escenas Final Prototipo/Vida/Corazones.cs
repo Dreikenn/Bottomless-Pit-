@@ -56,7 +56,7 @@ public class Corazones : MonoBehaviour {
         if (CantidadDeVida <= 0)
         {
 
-            Application.LoadLevel("Muerto");
+            Application.LoadLevel("menumuerte");
         }
     }
 
