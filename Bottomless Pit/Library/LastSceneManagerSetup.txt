@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Escenas Final Prototipo/menumuerte2.unity
+- path: Assets/Escenas Final Prototipo/Nivel3.unity
   isLoaded: 1
   isActive: 1

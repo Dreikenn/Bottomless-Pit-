@@ -10,7 +10,7 @@ public class LinternaCodigo : MonoBehaviour {
 
 	[SerializeField]
 
-	public bool Encender = false;
+	private bool Encender = false;
 	//Esta variable es static para acceder a ella desde el otro codigo.
 	static public float bateria = 10f;
 
@@ -24,7 +24,10 @@ public class LinternaCodigo : MonoBehaviour {
 
 
     public float z, x, y;
-
+	void Awake ()
+	{
+        Linterna.SetActive(false);
+    }
 	void Update () 
 	{
         //Si la linterna esta prendida, la energia que guarda la bateria va a ir bajando con el tiempo.
@@ -33,22 +36,12 @@ public class LinternaCodigo : MonoBehaviour {
         if (precionar > 0)
         {
             transform.localScale = new Vector3(x, y, z);
-            
-
-
-
         }
         if (precionar < 0)
         {
             transform.localScale = new Vector3(x, -y, z);
-            
-
-
         }
-        if (Encender == true)
-		{
-			bateria -= 1 * Time.deltaTime;
-		}
+      
 
 		if(Input.GetKeyDown("e"))
 		{
@@ -68,9 +61,12 @@ public class LinternaCodigo : MonoBehaviour {
 			}
 		}
 
-		//Si la linterna esta prendida pero la bateria se agoto, se apaga y se setea en falso.
-
-		if (bateria <= EnergiaMin && Encender == true) 
+        //Si la linterna esta prendida pero la bateria se agoto, se apaga y se setea en falso.
+        if (Encender == true)
+        {
+            bateria -= 1 * Time.deltaTime;
+        }
+        if (bateria <= EnergiaMin && Encender == true) 
 		{
 			Linterna.SetActive (false);
 
