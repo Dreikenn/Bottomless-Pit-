@@ -26,6 +26,8 @@ public class ControladorDePJ : MonoBehaviour {
     //Agacharce
     private float DePie;
     private float Agacharse;
+    private bool caminarAg = false;
+    
     
 
 
@@ -78,6 +80,13 @@ public class ControladorDePJ : MonoBehaviour {
         {
             transform.localScale = new Vector3(1, 1, 1);
             animacion.SetFloat("velocidad", precionar);
+            if(caminarAg == true)
+            {
+                animacion.SetFloat("CaminarAgachado", precionar);
+                
+            }
+           
+
 
 
 
@@ -86,7 +95,16 @@ public class ControladorDePJ : MonoBehaviour {
         {
             transform.localScale = new Vector3(-1, 1, -1);
             animacion.SetFloat("velocidad", Mathf.Abs(precionar));
+            if (caminarAg == true)
+            {
+                animacion.SetFloat("CaminarAgachado", Mathf.Abs(precionar));
+                
+            }
+          
+
         }
+        
+       
 
         
         //saltar
@@ -127,14 +145,21 @@ public class ControladorDePJ : MonoBehaviour {
         {
             agacharse();
             animacion.SetBool("agachado", true);
+            caminarAg = true;
+
 
         }
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
+            caminarAg = false;
             pararse();
             animacion.SetBool("agachado", false);
+            
+
         }
-       
+        
+
+
 
         //daño por caida
 
@@ -186,7 +211,7 @@ public class ControladorDePJ : MonoBehaviour {
     void pararse()
     {
 
-        transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
 
         movimiento.center = new Vector3(0f, 0.82f, 0f);
 

@@ -241,7 +241,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 95500683}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -275,7 +275,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 95500683}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -4635,7 +4635,7 @@ CapsuleCollider:
   m_Radius: 0.3
   m_Height: 1.6
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.82, z: 0}
 --- !u!114 &1151422560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6453,8 +6453,9 @@ GameObject:
   - component: {fileID: 1556169003}
   - component: {fileID: 1556169002}
   - component: {fileID: 1556169001}
+  - component: {fileID: 1556169005}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Ilustrador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6536,6 +6537,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1556169005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1556169000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25e5bf8c442e554f982b340fe0a28b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CantidadDeVida: 3
+  corazon: {fileID: 114134153757453586, guid: e8ebfde03babe1546bc013cb547ff435, type: 2}
 --- !u!1 &1566166718
 GameObject:
   m_ObjectHideFlags: 0
