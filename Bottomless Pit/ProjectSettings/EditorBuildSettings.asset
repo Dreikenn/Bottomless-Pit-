@@ -6,20 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Escenas Final Prototipo/menuinicio.unity
+    path: Assets/Escenas Final Prototipo/Escenas/menuinicio.unity
     guid: 57faa325bdee43d4c81ec4bf17bd8d25
   - enabled: 1
-    path: Assets/Escenas Final Prototipo/Nivel1.unity
+    path: Assets/Escenas Final Prototipo/Escenas/Nivel1.unity
     guid: 29ca528cce50012409f87d82871cae67
   - enabled: 1
-    path: Assets/Escenas Final Prototipo/Nivel2.unity
+    path: Assets/Escenas Final Prototipo/Escenas/Nivel2.unity
     guid: 09ce25a9d65bec94b9672293f80566ae
   - enabled: 1
-    path: Assets/Escenas Final Prototipo/Nivel3.unity
+    path: Assets/Escenas Final Prototipo/Escenas/Nivel3.unity
     guid: 2e7ac082421811441a3eb2c7adbce605
   - enabled: 1
-    path: Assets/Escenas Final Prototipo/menumuerte.unity
+    path: Assets/Escenas Final Prototipo/Escenas/menumuerte.unity
     guid: 1a9e8950df9dd374a86be25be67a48c3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Escenas Final Prototipo/menuganar.unity
     guid: 00000000000000000000000000000000
