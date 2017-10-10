@@ -12,16 +12,16 @@ public class Corazones : MonoBehaviour {
 	
 	void Start () {
 
-        DibujarVida(CantidadDeVida);
 
-      
+
+        DibujarVida(CantidadDeVida);
 
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        
+       
     }
 
     void DibujarVida(float cantidad)
@@ -48,6 +48,17 @@ public class Corazones : MonoBehaviour {
      
     }
 
+    void AparecerVida(float num, bool estado)
+    {
+        GameObject[] hearts;
+        hearts = GameObject.FindGameObjectsWithTag("Corazon");
+
+        for(int i= 0; i > hearts.Length;i++)
+        {
+            if(hearts[i].name == "Heart" + num)hearts[i].SetActive(estado);
+        }
+    }
+
     public void daño(float daño)
     {
         CantidadDeVida -= daño;
@@ -58,6 +69,14 @@ public class Corazones : MonoBehaviour {
 
             Application.LoadLevel("menumuerte");
         }
+    }
+
+    public void curar(float curar)
+    {
+        CantidadDeVida += curar;
+        DibujarVida(CantidadDeVida);
+
+
     }
 
 

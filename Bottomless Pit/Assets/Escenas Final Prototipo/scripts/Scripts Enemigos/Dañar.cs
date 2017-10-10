@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Dañar : MonoBehaviour {
-    public float DMG = 1;
+    
+    
 
     private GameObject BarraDeCorazones;
 
