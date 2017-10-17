@@ -9,6 +9,7 @@ TagManager:
   - Enemigo
   - climb
   - Corazon
+  - Bateria
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,11 @@ using UnityEngine;
 public class LinternaCodigo : MonoBehaviour {
 
 	public GameObject Linterna;
+
+	//energia de la linterna
+	public float EnergiaMaxima;
+	private float EnergiaActual;
+	public GameObject Barra;
     
 
 
@@ -12,11 +17,11 @@ public class LinternaCodigo : MonoBehaviour {
 
 	private bool Encender = false;
 	//Esta variable es static para acceder a ella desde el otro codigo.
-	static public float bateria = 10f;
+	static public float bateria = 1f;
 
 	[SerializeField]
 
-	private float EnergiaMax = 10f;
+	private float EnergiaMax = 1f;
 
 	[SerializeField]
 
@@ -24,12 +29,18 @@ public class LinternaCodigo : MonoBehaviour {
 
 
     public float z, x, y;
+	void Start()
+	{
+		EnergiaActual = EnergiaMaxima;
+	}
 	void Awake ()
 	{
+		
         Linterna.SetActive(false);
     }
 	void Update () 
 	{
+		
         //Si la linterna esta prendida, la energia que guarda la bateria va a ir bajando con el tiempo.
         float precionar = Input.GetAxis("Horizontal");
 
@@ -45,12 +56,14 @@ public class LinternaCodigo : MonoBehaviour {
 
 		if(Input.GetKeyDown("e"))
 		{
+			
 			//Si apretamos Space y la luz esta encendida se va a apagar. Por eso se setea en falso.
 			if (Encender == true) 
 			{
 				Linterna.SetActive (false);
-
 				Encender = false;
+
+
 			} 
 			//Si la luz esta apagada y la bateria es mayor que la energia minima, la luz se activa por eso se setea en verdadero al final.
 			else if (Encender == false && bateria > EnergiaMin)
@@ -58,13 +71,15 @@ public class LinternaCodigo : MonoBehaviour {
 				Linterna.SetActive (true);
 
 				Encender = true;
+				return;
 			}
 		}
 
         //Si la linterna esta prendida pero la bateria se agoto, se apaga y se setea en falso.
         if (Encender == true)
         {
-            bateria -= 1 * Time.deltaTime;
+            bateria -= 0.1f * Time.deltaTime;
+			InvokeRepeating ("Decrecer", 1f, 1f);
         }
         if (bateria <= EnergiaMin && Encender == true) 
 		{
@@ -87,4 +102,12 @@ public class LinternaCodigo : MonoBehaviour {
 		}
 		
 	}
+
+	public void Decrecer()
+	{
+		
+
+		Barra.transform.localScale = new Vector3(bateria,Barra.transform.localScale.y,Barra.transform.localScale.z);
+	}
+
 }

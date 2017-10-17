@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BarraEnergia : MonoBehaviour {
- public float EnergiaMaxima = 100f;
- public float EnergiaActual = 0f;
+ public float EnergiaMaxima;
+ public float EnergiaActual;
  public GameObject Barra;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -18,21 +19,16 @@ public class BarraEnergia : MonoBehaviour {
 	{ 
 		if (Input.GetKeyDown ("e"))
 		{
-			InvokeRepeating ("Decrecer", 1f, 1f);
+			Decrecer ();
 		}
+			
 		
 	}
 
 	void Decrecer()
 	{
-		EnergiaActual -=10f;
-		float CalcularEnergia = EnergiaActual / EnergiaMaxima;
-
-		ManejarLaBarra (CalcularEnergia);
+		EnergiaActual -= 5;
+		Barra.transform.localScale = new Vector3((EnergiaActual/EnergiaMaxima),1,1);
 	}
 
-	public void ManejarLaBarra(float BarraActual)
-	{
-		Barra.transform.localScale = new Vector3 (BarraActual, Barra.transform.localScale.y, Barra.transform.localScale.z);
-	}
 }
