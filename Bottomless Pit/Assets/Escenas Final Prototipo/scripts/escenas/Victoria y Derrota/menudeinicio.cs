@@ -14,19 +14,19 @@ public class menudeinicio : MonoBehaviour {
 
     public void level1()
     {
-        boton.Play();
+        //boton.Play();
         Application.LoadLevel("Nivel1");
 
     }
     public void level2()
     {
-        boton.Play();
+        //boton.Play();
         Application.LoadLevel("Nivel2");
 
     }
     public void level3()
-    {
-        boton.Play();
+	{
+	//boton.Play();
         Application.LoadLevel("Nivel3");
 
     }

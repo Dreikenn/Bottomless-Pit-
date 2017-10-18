@@ -29,14 +29,13 @@ public class LinternaCodigo : MonoBehaviour {
 
 
     public float z, x, y;
-	void Start()
-	{
-		EnergiaActual = EnergiaMaxima;
-	}
+
 	void Awake ()
 	{
+		bateria = 1f;
 		
         Linterna.SetActive(false);
+		EnergiaActual = EnergiaMaxima;
     }
 	void Update () 
 	{
