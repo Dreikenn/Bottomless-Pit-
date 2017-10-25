@@ -7,6 +7,7 @@ public class Dañar : MonoBehaviour {
     
 
     private GameObject BarraDeCorazones;
+    public bool RomperAlContacto;
 
     void Start()
     {
@@ -20,7 +21,10 @@ public class Dañar : MonoBehaviour {
         {
 
             BarraDeCorazones.SendMessage("daño", 1);
-           
+           if(RomperAlContacto== true)
+            {
+                Destroy(gameObject);
+            }
            
         }
     }
