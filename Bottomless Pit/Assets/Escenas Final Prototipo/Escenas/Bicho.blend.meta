@@ -3,8 +3,42 @@ guid: df0391a0c63b45343a8e233f770cac68
 timeCreated: 1508336448
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName: {}
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cube_MeshPart0
+    100004: Cube_MeshPart1
+    100006: Cube_MeshPart2
+    100008: Cube_MeshPart3
+    100010: Cube_MeshPart4
+    100012: Cube_MeshPart5
+    400000: //RootNode
+    400002: Cube_MeshPart0
+    400004: Cube_MeshPart1
+    400006: Cube_MeshPart2
+    400008: Cube_MeshPart3
+    400010: Cube_MeshPart4
+    400012: Cube_MeshPart5
+    2300000: Cube_MeshPart0
+    2300002: Cube_MeshPart1
+    2300004: Cube_MeshPart2
+    2300006: Cube_MeshPart3
+    2300008: Cube_MeshPart4
+    2300010: Cube_MeshPart5
+    3300000: Cube_MeshPart0
+    3300002: Cube_MeshPart1
+    3300004: Cube_MeshPart2
+    3300006: Cube_MeshPart3
+    3300008: Cube_MeshPart4
+    3300010: Cube_MeshPart5
+    4300000: Cube_MeshPart0
+    4300002: Cube_MeshPart1
+    4300004: Cube_MeshPart2
+    4300006: Cube_MeshPart3
+    4300008: Cube_MeshPart4
+    4300010: Cube_MeshPart5
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -27,7 +61,6 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -35,10 +68,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -54,7 +84,6 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
