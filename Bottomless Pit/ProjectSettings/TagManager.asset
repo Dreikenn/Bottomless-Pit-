@@ -10,6 +10,8 @@ TagManager:
   - climb
   - Corazon
   - Bateria
+  - TierraPiedra
+  - Toa
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - 
   - Tierra
   - Jugador
-  - 
-  - 
+  - Roca
+  - TierraX
   - 
   - 
   - 
