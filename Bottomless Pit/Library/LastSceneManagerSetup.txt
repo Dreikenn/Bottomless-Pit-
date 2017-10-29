@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Escenas Final Prototipo/Escenas/menuinicio.unity
+- path: Assets/MapaFinal/NivelFinal.unity
   isLoaded: 1
   isActive: 1

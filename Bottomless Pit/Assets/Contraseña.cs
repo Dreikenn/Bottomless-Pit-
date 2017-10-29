@@ -10,15 +10,15 @@ public class Contraseña : MonoBehaviour {
 	public bool keypadScreen;
 	public GameObject prefab;
 
-
-	void OntriggerEnter (Collider other) 
+	void OnTriggerEnter(Collider other) 
 	{
 				onTrigger = true;
 	}
-	void OntriggerExit (Collider other) {
+	void OnTriggerExit(Collider other) {
 
-		onTrigger = false;
+
 		keypadScreen = false;
+		onTrigger = false;
 		input = "";
 	}
 	void Update()
@@ -28,10 +28,12 @@ public class Contraseña : MonoBehaviour {
 			Destroy (prefab);
 		}
 	}
-	void onGui () {
+	void OnGUI()
+	{
 		if (onTrigger)
 		{
-			GUI.Box(new Rect(6,50,200,25), "Tocar 'X' para habrir panel");
+			GUI.Box(new Rect(250,250,200,25), "Tocar 'X' para abrir panel");
+
 			if(Input.GetKeyDown(KeyCode.X))
 			{
 				keypadScreen = true;
@@ -42,47 +44,47 @@ public class Contraseña : MonoBehaviour {
 
 		if (keypadScreen)
 		{
-			GUI.Box (new Rect (0, 0, 400, 400), "");
-			GUI.Box (new Rect (5, 5, 310, 25), input);
-			if(GUI.Button (new Rect (5, 35, 100, 100), "1"))
+			
+			GUI.Box (new Rect (265, 120, 150, 25), input);
+			if(GUI.Button (new Rect (265, 145, 50, 50), "1"))
 			{
 		
 				input = input + "1";
 			}
-			if(GUI.Button (new Rect (110, 35, 100, 100), "2"))
+			if(GUI.Button (new Rect (315, 145, 50, 50), "2"))
 			{
 				
 				input = input + "2";
 			}
-			if(GUI.Button (new Rect (215, 35, 100, 100), "3"))
+			if(GUI.Button (new Rect (365, 145, 50, 50), "3"))
 			{
 				
 				input = input + "3";
-			}if(GUI.Button (new Rect (5, 140, 100, 100), "4"))
+			}if(GUI.Button (new Rect (265, 195,50, 50), "4"))
 			{
 				
 				input = input + "4";
 			}
-			if(GUI.Button (new Rect (110, 140, 100, 100), "5"))
+			if(GUI.Button (new Rect (315, 195,50, 50), "5"))
 			{
 				
 				input = input + "5";
 			}
-			if(GUI.Button (new Rect (215, 140, 100, 100), "6"))
+			if(GUI.Button (new Rect (365, 195, 50, 50), "6"))
 			{
 				
 				input = input + "6";
-			}if(GUI.Button (new Rect (5, 240, 100, 100), "7"))
+			}if(GUI.Button (new Rect (265, 245, 50, 50), "7"))
 			{
 				
 				input = input + "7";
 			}
-			if(GUI.Button (new Rect (110, 240, 100, 100), "8"))
+			if(GUI.Button (new Rect (315, 245,50, 50), "8"))
 			{
 				
 				input = input + "8";
 			}
-			if(GUI.Button (new Rect (215, 240, 100, 100), "9"))
+			if(GUI.Button (new Rect (365, 245, 50, 50), "9"))
 			{
 				
 				input = input + "9";
