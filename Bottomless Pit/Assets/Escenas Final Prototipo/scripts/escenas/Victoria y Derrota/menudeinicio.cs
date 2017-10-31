@@ -15,7 +15,7 @@ public class menudeinicio : MonoBehaviour {
     public void level1()
     {
         //boton.Play();
-        Application.LoadLevel("NivelFinal");
+        Application.LoadLevel("Nivel1");
 
     }
    

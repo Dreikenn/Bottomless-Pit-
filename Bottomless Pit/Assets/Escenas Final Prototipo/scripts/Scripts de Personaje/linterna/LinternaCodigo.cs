@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LinternaCodigo : MonoBehaviour {
 
-	public GameObject Linterna;
+    //cordura
+    public float tiempo = 5f;
+    public Text timerText;
+    private int contador = 1;
+    private bool Activartiempo = true;
+
+    public GameObject Linterna;
 
 	//energia de la linterna
 	public float EnergiaMaxima;
@@ -30,16 +37,26 @@ public class LinternaCodigo : MonoBehaviour {
 
     public float z, x, y;
 
-	void Awake ()
+    void Start()
+    {
+        timerText.text = " " + tiempo;
+    }
+    void Awake ()
 	{
-		bateria = 1f;
+       
+        bateria = 1f;
 		
         Linterna.SetActive(false);
 		EnergiaActual = EnergiaMaxima;
     }
-	void Update () 
-	{
-		
+    void Update()
+    {
+
+
+
+
+
+
         //Si la linterna esta prendida, la energia que guarda la bateria va a ir bajando con el tiempo.
         float precionar = Input.GetAxis("Horizontal");
 
@@ -51,45 +68,64 @@ public class LinternaCodigo : MonoBehaviour {
         {
             transform.localScale = new Vector3(x, -y, z);
         }
+
+
+        if (Input.GetKeyDown("e"))
+        {
+          
+            
+
+            //Si apretamos Space y la luz esta encendida se va a apagar. Por eso se setea en falso.
+            if (Encender == true)
+            {
+                Linterna.SetActive(false);
+                Encender = false;
+                Activartiempo = true;
+
+            }
+            //Si la luz esta apagada y la bateria es mayor que la energia minima, la luz se activa por eso se setea en verdadero al final.
+            else if (Encender == false && bateria > EnergiaMin)
+            {
+                Linterna.SetActive(true);
+                tiempo = 5f;
+                Activartiempo = false;
+                Encender = true;
+                return;
+            }
+        }
       
-
-		if(Input.GetKeyDown("e"))
-		{
-			
-			//Si apretamos Space y la luz esta encendida se va a apagar. Por eso se setea en falso.
-			if (Encender == true) 
-			{
-				Linterna.SetActive (false);
-				Encender = false;
-
-
-			} 
-			//Si la luz esta apagada y la bateria es mayor que la energia minima, la luz se activa por eso se setea en verdadero al final.
-			else if (Encender == false && bateria > EnergiaMin)
-			{
-				Linterna.SetActive (true);
-
-				Encender = true;
-				return;
-			}
-		}
 
         //Si la linterna esta prendida pero la bateria se agoto, se apaga y se setea en falso.
         if (Encender == true)
         {
             bateria -= 0.1f * Time.deltaTime;
 			InvokeRepeating ("Decrecer", 1f, 1f);
+           
         }
         if (bateria <= EnergiaMin && Encender == true) 
 		{
 			Linterna.SetActive (false);
+            Activartiempo = true;
 
-			Encender = false;
-		}
+            Encender = false;
+            
+        }
 
-		//Controla que la bateria no se recargue mas de lo que debe, es decir si la bateria es de diez y se recarga a mas de diez vuelva a ser diez.
+        if (Activartiempo == true)
+        {
 
-		if(bateria >= EnergiaMax)
+            tiempo -= Time.deltaTime;
+            timerText.text = " " + tiempo.ToString("f0");
+        }
+
+        if (tiempo <= 0f)
+        {
+            Application.LoadLevel("menumuerte");
+        }
+
+        //Controla que la bateria no se recargue mas de lo que debe, es decir si la bateria es de diez y se recarga a mas de diez vuelva a ser diez.
+
+        if (bateria >= EnergiaMax)
 		{
 			bateria = EnergiaMax;
 		}

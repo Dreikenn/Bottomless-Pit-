@@ -18,7 +18,7 @@ public class menudemuerte : MonoBehaviour {
     public void level1()
     {
         //boton1.Play();
-        Application.LoadLevel("NivelFinal");
+        Application.LoadLevel("Nivel1");
 
     }
     
