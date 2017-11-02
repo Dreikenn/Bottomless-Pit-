@@ -6,7 +6,7 @@ public class conseguirvictoria : MonoBehaviour {
 
     void OnTriggerEnter(Collider otro)
     {
-        Application.LoadLevel("Nivel2");
+        Application.LoadLevel("menuinicio");
 
     }
 }

@@ -37,11 +37,8 @@ GameObject:
   - component: {fileID: 4865296511964580}
   - component: {fileID: 33813119469736024}
   - component: {fileID: 23669658186261554}
-  - component: {fileID: 64584440174598144}
-  - component: {fileID: 114187310144908500}
   - component: {fileID: 54206902686093666}
   - component: {fileID: 136590368967292486}
-  - component: {fileID: 114254760454949244}
   m_Layer: 10
   m_Name: Roca
   m_TagString: Toa
@@ -69,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095377335125682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.153357, y: 0.9601402, z: 0.10794828}
+  m_LocalPosition: {x: 17.153357, y: 3.6500015, z: 0.10794828}
   m_LocalScale: {x: 0.54281807, y: 0.85267496, z: 0.63685054}
   m_Children:
   - {fileID: 4004580155984950}
@@ -106,7 +103,6 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33813119469736024
 MeshFilter:
@@ -128,22 +124,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 90
   m_CollisionDetection: 0
---- !u!64 &64584440174598144
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095377335125682}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: fa4c70d1559dd9e46a2ffe5f7a5475cb, type: 3}
 --- !u!108 &108001232131626810
 Light:
   m_ObjectHideFlags: 1
@@ -151,7 +133,7 @@ Light:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1022702524802376}
   m_Enabled: 1
-  serializedVersion: 8
+  serializedVersion: 7
   m_Type: 2
   m_Color: {r: 0.96146053, g: 1, b: 0.30147058, a: 1}
   m_Intensity: 1
@@ -176,34 +158,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114187310144908500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095377335125682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15198c518f7985446a02496b128850ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RomperAlContacto: 1
---- !u!114 &114254760454949244
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095377335125682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15198c518f7985446a02496b128850ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RomperAlContacto: 1
 --- !u!136 &136590368967292486
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -211,7 +167,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095377335125682}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.6
   m_Height: 1.2

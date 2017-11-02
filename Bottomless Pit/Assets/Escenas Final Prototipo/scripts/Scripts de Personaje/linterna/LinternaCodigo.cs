@@ -9,7 +9,7 @@ public class LinternaCodigo : MonoBehaviour {
     public float tiempo = 5f;
     public Text timerText;
     private int contador = 1;
-    private bool Activartiempo = true;
+    public bool Activartiempo = true;
 
     public GameObject Linterna;
 
@@ -49,6 +49,7 @@ public class LinternaCodigo : MonoBehaviour {
         Linterna.SetActive(false);
 		EnergiaActual = EnergiaMaxima;
     }
+   
     void Update()
     {
 
@@ -144,5 +145,19 @@ public class LinternaCodigo : MonoBehaviour {
 
 		Barra.transform.localScale = new Vector3(bateria,Barra.transform.localScale.y,Barra.transform.localScale.z);
 	}
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "Untagged") return;
+        if (col.tag == "Player") return;
+        if (col.tag == "contraseña")
+        { 
 
+        Activartiempo = false;
+    }
+        
+
+    }
+  
+
+    
 }

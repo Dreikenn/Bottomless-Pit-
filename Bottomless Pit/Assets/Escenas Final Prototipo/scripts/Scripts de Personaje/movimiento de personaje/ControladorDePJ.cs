@@ -48,8 +48,8 @@ public class ControladorDePJ : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-       
 
+        
         
             movimientobala v = col.GetComponent<movimientobala>();
             Patrulla vz = col.GetComponent<Patrulla>();

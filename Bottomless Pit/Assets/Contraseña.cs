@@ -9,18 +9,26 @@ public class Contraseña : MonoBehaviour {
 	public bool onTrigger;
 	public bool keypadScreen;
 	public GameObject prefab;
+    
 
-	void OnTriggerEnter(Collider other) 
+    
+
+    void OnTriggerEnter(Collider other) 
 	{
-				onTrigger = true;
-	}
+        if (other.tag == "Player")
+        {
+
+            onTrigger = true;
+        }      
+    }
 	void OnTriggerExit(Collider other) {
 
 
 		keypadScreen = false;
 		onTrigger = false;
 		input = "";
-	}
+        
+    }
 	void Update()
 	{
 		if (input == curPassword)
@@ -38,6 +46,7 @@ public class Contraseña : MonoBehaviour {
 			{
 				keypadScreen = true;
 				onTrigger = false;
+
 			}
 		}
 
