@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Contraseña : MonoBehaviour {
 	
-	public string curPassword = "9324";
+	public string curPassword;
 	public string input;
 	public bool onTrigger;
 	public bool keypadScreen;

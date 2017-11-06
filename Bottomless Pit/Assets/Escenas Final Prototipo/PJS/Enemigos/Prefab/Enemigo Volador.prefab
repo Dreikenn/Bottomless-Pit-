@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4982122324577790}
   - component: {fileID: 114134707921053436}
   - component: {fileID: 135504066729487406}
+  - component: {fileID: 114828222510276542}
   m_Layer: 0
   m_Name: Enemigo Volador
   m_TagString: Untagged
@@ -88,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075018917984788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.7, z: -2.62}
+  m_LocalPosition: {x: 0, y: 11.58, z: -2.62}
   m_LocalScale: {x: 1, y: 1, z: 0.24156284}
   m_Children: []
   m_Father: {fileID: 4982122324577790}
@@ -127,8 +128,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120694169488582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18452868, y: 8.336692, z: 0.54}
-  m_LocalScale: {x: 3.3530035, y: 1.2593192, z: 2.042873}
+  m_LocalPosition: {x: 0, y: 43, z: 70.1}
+  m_LocalScale: {x: 1.99877, y: 1, z: 3.55369}
   m_Children:
   - {fileID: 4641992298390590}
   - {fileID: 4665518428192946}
@@ -230,7 +231,7 @@ MonoBehaviour:
   NuevaPosicion: {x: 1, y: 1, z: 1}
   PosicionActual: posicion2
   smooth: 0.5
-  reset: 9
+  reset: 4
 --- !u!114 &114344178419902054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,7 +243,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15198c518f7985446a02496b128850ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DMG: 1
+  RomperAlContacto: 0
+--- !u!114 &114828222510276542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120694169488582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15198c518f7985446a02496b128850ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RomperAlContacto: 0
 --- !u!135 &135504066729487406
 SphereCollider:
   m_ObjectHideFlags: 1

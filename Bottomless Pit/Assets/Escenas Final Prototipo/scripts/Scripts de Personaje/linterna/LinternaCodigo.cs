@@ -88,7 +88,7 @@ public class LinternaCodigo : MonoBehaviour {
             else if (Encender == false && bateria > EnergiaMin)
             {
                 Linterna.SetActive(true);
-                tiempo = 5f;
+                tiempo = 30f;
                 Activartiempo = false;
                 Encender = true;
                 return;
