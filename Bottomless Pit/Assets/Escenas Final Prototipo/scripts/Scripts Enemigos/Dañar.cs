@@ -7,6 +7,7 @@ public class Dañar : MonoBehaviour {
     
 
     private GameObject BarraDeCorazones;
+    public AudioSource RomperRoca;
     public bool RomperAlContacto;
 
     void Start()
@@ -16,16 +17,19 @@ public class Dañar : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        
+        if(RomperAlContacto == true && col.tag == "TierraPiedra")
+        {
+            RomperRoca.Play();
+            Destroy(gameObject);
+        }
         if (col.tag == "Player")
         {
 
             BarraDeCorazones.SendMessage("daño", 1);
-           if(RomperAlContacto== true)
-            {
-                Destroy(gameObject);
-            }
-           
+            RomperRoca.Play();
+            Destroy(gameObject);
+
+
         }
     }
 

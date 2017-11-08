@@ -14,6 +14,7 @@ TagManager:
   - Toa
   - "contrase\xF1a"
   - linterna
+  - Seguro
   layers:
   - Default
   - TransparentFX
@@ -29,8 +30,8 @@ TagManager:
   - TierraX
   - bengala
   - Piso quecae
-  - 
-  - 
+  - Linterna
+  - Luz
   - 
   - 
   - 

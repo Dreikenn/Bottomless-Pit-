@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Contraseña : MonoBehaviour {
 	
@@ -9,22 +10,21 @@ public class Contraseña : MonoBehaviour {
 	public bool onTrigger;
 	public bool keypadScreen;
 	public GameObject prefab;
-    
-
-    
+   
 
     void OnTriggerEnter(Collider other) 
 	{
         if (other.tag == "Player")
         {
-
+           
             onTrigger = true;
+
         }      
     }
 	void OnTriggerExit(Collider other) {
 
-
-		keypadScreen = false;
+        
+        keypadScreen = false;
 		onTrigger = false;
 		input = "";
         

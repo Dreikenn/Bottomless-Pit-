@@ -3,57 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LinternaCodigo : MonoBehaviour {
+public class LinternaCodigo : MonoBehaviour
+{
 
     //cordura
     public float tiempo = 5f;
     public Text timerText;
     private int contador = 1;
-    public bool Activartiempo = true;
+    public bool Activartiempo;
 
     public GameObject Linterna;
 
-	//energia de la linterna
-	public float EnergiaMaxima;
-	private float EnergiaActual;
-	public GameObject Barra;
+    //energia de la linterna
+    public float EnergiaMaxima;
+    private float EnergiaActual;
+    public GameObject Barra;
+
+
+
+    [SerializeField]
+
+    private bool Encender = false;
+    public AudioSource encender;
+    public AudioSource apagar;
+    //Esta variable es static para acceder a ella desde el otro codigo.
+    static public float bateria = 1f;
+
+    [SerializeField]
+
+    private float EnergiaMax = 1f;
+
+    [SerializeField]
+
+    private float EnergiaMin = 0f;
+
     
-
-
-	[SerializeField]
-
-	private bool Encender = false;
-	//Esta variable es static para acceder a ella desde el otro codigo.
-	static public float bateria = 1f;
-
-	[SerializeField]
-
-	private float EnergiaMax = 1f;
-
-	[SerializeField]
-
-	private float EnergiaMin = 0f;
 
 
     public float z, x, y;
 
+ 
     void Start()
     {
         timerText.text = " " + tiempo;
     }
-    void Awake ()
-	{
-       
+    void Awake()
+    {
+        Activartiempo = true;
+
         bateria = 1f;
-		
+
         Linterna.SetActive(false);
-		EnergiaActual = EnergiaMaxima;
+        EnergiaActual = EnergiaMaxima;
     }
-   
+
     void Update()
     {
 
-
+        x = 0.09700178f;
+        z = 0.07092451f;
+        y = 0.0372998f;
 
 
 
@@ -73,12 +82,13 @@ public class LinternaCodigo : MonoBehaviour {
 
         if (Input.GetKeyDown("e"))
         {
-          
-            
+
+
 
             //Si apretamos Space y la luz esta encendida se va a apagar. Por eso se setea en falso.
             if (Encender == true)
             {
+                apagar.Play();
                 Linterna.SetActive(false);
                 Encender = false;
                 Activartiempo = true;
@@ -87,6 +97,7 @@ public class LinternaCodigo : MonoBehaviour {
             //Si la luz esta apagada y la bateria es mayor que la energia minima, la luz se activa por eso se setea en verdadero al final.
             else if (Encender == false && bateria > EnergiaMin)
             {
+                encender.Play();
                 Linterna.SetActive(true);
                 tiempo = 30f;
                 Activartiempo = false;
@@ -94,22 +105,23 @@ public class LinternaCodigo : MonoBehaviour {
                 return;
             }
         }
-      
+
 
         //Si la linterna esta prendida pero la bateria se agoto, se apaga y se setea en falso.
         if (Encender == true)
         {
             bateria -= 0.1f * Time.deltaTime;
-			InvokeRepeating ("Decrecer", 1f, 1f);
-           
+            InvokeRepeating("Decrecer", 1f, 1f);
+
         }
-        if (bateria <= EnergiaMin && Encender == true) 
-		{
-			Linterna.SetActive (false);
+        if (bateria <= EnergiaMin && Encender == true)
+        {
+            apagar.Play();
+            Linterna.SetActive(false);
             Activartiempo = true;
 
             Encender = false;
-            
+
         }
 
         if (Activartiempo == true)
@@ -127,37 +139,24 @@ public class LinternaCodigo : MonoBehaviour {
         //Controla que la bateria no se recargue mas de lo que debe, es decir si la bateria es de diez y se recarga a mas de diez vuelva a ser diez.
 
         if (bateria >= EnergiaMax)
-		{
-			bateria = EnergiaMax;
-		}
+        {
+            bateria = EnergiaMax;
+        }
 
-		// Si la bateria esta en numeros negativos vuelve a ser cero.
-		else if (bateria <= EnergiaMin) 
-		{
-			bateria = EnergiaMin;
-		}
-		
-	}
+        // Si la bateria esta en numeros negativos vuelve a ser cero.
+        else if (bateria <= EnergiaMin)
+        {
+            bateria = EnergiaMin;
+        }
 
-	public void Decrecer()
-	{
-		
+    }
 
-		Barra.transform.localScale = new Vector3(bateria,Barra.transform.localScale.y,Barra.transform.localScale.z);
-	}
-    private void OnTriggerEnter(Collider col)
+    public void Decrecer()
     {
-        if (col.tag == "Untagged") return;
-        if (col.tag == "Player") return;
-        if (col.tag == "contraseña")
-        { 
 
-        Activartiempo = false;
+
+        Barra.transform.localScale = new Vector3(bateria, Barra.transform.localScale.y, Barra.transform.localScale.z);
     }
-        
+   
 
-    }
-  
-
-    
 }
