@@ -7,6 +7,7 @@ public class BateriaCodigo : MonoBehaviour {
 	[SerializeField]
 
 	private float BateriaCargada;
+    public AudioSource pilas;
 
 	//Si colisionamos con la bateria se le recarga completamente la misma.
 	void OnTriggerEnter(Collider other) 
@@ -16,7 +17,7 @@ public class BateriaCodigo : MonoBehaviour {
 		{
 			
 			LinternaCodigo.bateria += BateriaCargada;
-		
+            pilas.Play();
 			Destroy (this.gameObject);
 		}
 	}

@@ -7,10 +7,11 @@ public class Corazones : MonoBehaviour {
 
     public float CantidadDeVida;
     public Image corazon;
-    
-    
-	
-	void Start () {
+    public AudioSource ouch;
+    public AudioSource muerte;
+
+
+    void Start () {
 
 
 
@@ -62,10 +63,14 @@ public class Corazones : MonoBehaviour {
     public void daño(float daño)
     {
         CantidadDeVida -= daño;
+        ouch.Play();
         DesaparecerVida(CantidadDeVida, false);
 
         if (CantidadDeVida <= 0)
         {
+            muerte.Play();
+
+            
 
             Application.LoadLevel("menumuerte");
         }
