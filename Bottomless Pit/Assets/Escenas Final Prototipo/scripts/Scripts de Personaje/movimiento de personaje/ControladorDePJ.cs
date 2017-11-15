@@ -140,23 +140,54 @@ public class ControladorDePJ : MonoBehaviour {
 
         print(movimiento.isGrounded);
 
+
         //agacharce
-        if(Input.GetKey(KeyCode.DownArrow))
+
+        RaycastHit agachado;
+
+        Debug.DrawLine(transform.position + transform.up * 3, transform.position + transform.up * 1 , Color.green);
+
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             agacharse();
             animacion.SetBool("agachado", true);
             caminarAg = true;
 
 
-        }
-        if (Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            caminarAg = false;
-            pararse();
-            animacion.SetBool("agachado", false);
-            
 
         }
+
+
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            if (Physics.Raycast(transform.position + transform.up *2, transform.position + transform.up *1 , out agachado, 8))
+            {
+                print(agachado.collider.transform.tag);
+                
+                 if (agachado.transform.tag == "Pared")
+                {
+                    caminarAg = true;
+                }
+                else 
+                {
+                    caminarAg = false;
+                    pararse();
+                    animacion.SetBool("agachado", false);
+                }
+
+
+            }
+            
+
+
+
+
+
+
+
+        }
+       
+      
         
 
 

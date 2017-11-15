@@ -18,7 +18,7 @@ public class Dañar : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if(RomperAlContacto == true && col.tag == "TierraPiedra")
+        if(RomperAlContacto == true && col.tag == "TierraPiedra" )
         {
             RomperRoca.Play();
             Destroy(gameObject);

@@ -15,6 +15,7 @@ TagManager:
   - "contrase\xF1a"
   - linterna
   - Seguro
+  - Pared
   layers:
   - Default
   - TransparentFX

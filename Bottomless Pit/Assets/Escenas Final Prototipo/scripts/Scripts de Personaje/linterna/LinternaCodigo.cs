@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class LinternaCodigo : MonoBehaviour
 {
+    //si hay luz el tiempo no bajara
+    public Transform luz;
 
+    public float distancia;
     //cordura
     public float tiempo = 5f;
     public Text timerText;
@@ -59,6 +62,7 @@ public class LinternaCodigo : MonoBehaviour
 
     void Update()
     {
+        distancia = Vector3.Distance(luz.position, transform.position);
 
         x = 0.09700178f;
         z = 0.07092451f;
@@ -78,7 +82,7 @@ public class LinternaCodigo : MonoBehaviour
         {
             transform.localScale = new Vector3(x, -y, z);
         }
-
+    
 
         if (Input.GetKeyDown("e"))
         {
@@ -94,6 +98,8 @@ public class LinternaCodigo : MonoBehaviour
                 Activartiempo = true;
 
             }
+           
+
             //Si la luz esta apagada y la bateria es mayor que la energia minima, la luz se activa por eso se setea en verdadero al final.
             else if (Encender == false && bateria > EnergiaMin)
             {
@@ -105,6 +111,27 @@ public class LinternaCodigo : MonoBehaviour
                 return;
             }
         }
+      
+        else if (Encender == false && distancia <= 3)
+        {
+            Activartiempo = false;
+        }
+        else if (Encender == false && distancia > 3)
+        {
+            Activartiempo = true;
+        }
+        else if(Encender == true && distancia > 3)
+        {
+            Activartiempo = false;
+        }
+        else
+        {
+            Activartiempo = false;
+        }
+
+      
+       
+
 
 
         //Si la linterna esta prendida pero la bateria se agoto, se apaga y se setea en falso.

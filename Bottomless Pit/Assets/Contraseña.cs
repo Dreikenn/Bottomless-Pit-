@@ -12,11 +12,14 @@ public class Contraseña : MonoBehaviour {
 	public GameObject prefab;
 
 	[SerializeField] 
-	private Image Imagen1;
-	[SerializeField] 
-	private Image Imagen2;
-	[SerializeField] 
-	private Image Imagen3;
+	
+    public Texture imagen;
+    [SerializeField]
+    public Texture imagen2;
+	
+    [SerializeField]
+    public Texture imagen3;
+	
 	[SerializeField] 
 	private Image Tocar;
 
@@ -36,9 +39,7 @@ public class Contraseña : MonoBehaviour {
 		onTrigger = false;
 		input = "";
 
-			Imagen1.enabled = false;	
-			Imagen2.enabled = false;
-			Imagen3.enabled = false;
+			
 		Tocar.enabled = false;	
     }
 	void Update()
@@ -59,9 +60,7 @@ public class Contraseña : MonoBehaviour {
 				Tocar.enabled = false;
 				keypadScreen = true;
 				onTrigger = false;
-				Imagen1.enabled = true;	
-				Imagen2.enabled = true;
-				Imagen3.enabled = true;
+				
 			}
 		}
 
@@ -70,17 +69,17 @@ public class Contraseña : MonoBehaviour {
 		{
 			
 
-			if(GUI.Button (new Rect (225, 145, 50, 50), " "))
+			if(GUI.Button (new Rect (225, 145, 50, 50), imagen))
 			{
 				
 				input = input + "1";
 			}
-			if(GUI.Button (new Rect (315, 145, 50, 50), " "))
+			if(GUI.Button (new Rect (315, 145, 50, 50), imagen2))
 			{
 				
 				input = input + "2";
 			}
-			if(GUI.Button (new Rect (405, 145, 50, 50), " "))
+			if(GUI.Button (new Rect (405, 145, 50, 50), imagen3))
 			{
 				
 				input = input + "3";
