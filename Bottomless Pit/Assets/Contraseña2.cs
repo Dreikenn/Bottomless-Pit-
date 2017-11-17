@@ -12,19 +12,19 @@ public class Contraseña2 : MonoBehaviour {
 	public GameObject prefab;
 
 [SerializeField] 
-private Image Imagen1;
+	public Texture Imagen1;
 [SerializeField] 
-private Image Imagen2;
+	public Texture Imagen2;
 [SerializeField] 
-private Image Imagen3;
+	public Texture Imagen3;
 [SerializeField] 
-private Image Imagen4;
+	public Texture Imagen4;
 [SerializeField] 
-private Image Imagen5;
+	public Texture Imagen5;
 [SerializeField] 
-private Image Imagen6;
+	public Texture Imagen6;
 [SerializeField] 
-private Image Tocar;
+	public Image Tocar;
 
 void OnTriggerEnter(Collider other) 
 {
@@ -42,12 +42,6 @@ void OnTriggerExit(Collider other) {
 	onTrigger = false;
 	input = "";
 
-	Imagen1.enabled = false;	
-	Imagen2.enabled = false;
-	Imagen3.enabled = false;
-	Imagen4.enabled = false;
-	Imagen5.enabled = false;
-	Imagen6.enabled = false;
 	Tocar.enabled = false;	
 }
 void Update()
@@ -68,12 +62,13 @@ void OnGUI()
 			Tocar.enabled = false;
 			keypadScreen = true;
 			onTrigger = false;
+			/*
 			Imagen1.enabled = true;	
 			Imagen2.enabled = true;
 			Imagen3.enabled = true;
 			Imagen4.enabled = true;
 			Imagen5.enabled = true;
-			Imagen6.enabled = true;
+			Imagen6.enabled = true;*/
 		}
 	}
 

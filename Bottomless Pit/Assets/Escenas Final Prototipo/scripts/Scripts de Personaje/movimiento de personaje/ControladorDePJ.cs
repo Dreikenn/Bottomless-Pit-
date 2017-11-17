@@ -25,7 +25,8 @@ public class ControladorDePJ : MonoBehaviour {
 
     //Agacharce
     private float DePie;
-    private float Agacharse;
+    
+	private float Agacharse;
     private bool caminarAg = false;
     
     
@@ -98,7 +99,7 @@ public class ControladorDePJ : MonoBehaviour {
             if (caminarAg == true)
             {
                 animacion.SetFloat("CaminarAgachado", Mathf.Abs(precionar));
-                
+				caminarAg = false;
             }
           
 
