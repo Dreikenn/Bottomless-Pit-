@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 using UnityEngine.UI;
 
 public class Temporizador : MonoBehaviour {
@@ -11,6 +12,7 @@ public class Temporizador : MonoBehaviour {
     
     private int contador = 1;
     private bool Frenar = false;
+	private PostProcessingBehaviour efecto;
 
     void Start()
     {
@@ -51,6 +53,7 @@ public class Temporizador : MonoBehaviour {
 
         tiempo -= Time.deltaTime;
         timerText.text = " " + tiempo.ToString("f0");
+	
 
         if (tiempo <=0f)
         {

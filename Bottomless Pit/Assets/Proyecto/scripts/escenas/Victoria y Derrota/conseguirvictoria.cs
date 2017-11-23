@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class conseguirvictoria : MonoBehaviour {
 
-    void OnTriggerEnter(Collider otro)
+	void OnTriggerEnter(Collider otro)
     {
-        Application.LoadLevel("menuinicio");
+		if (otro.tag == "Player") {
+			Application.LoadLevel ("Final");
+		}
 
     }
 }

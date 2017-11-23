@@ -161,7 +161,7 @@ public class ControladorDePJ : MonoBehaviour {
 
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
-            if (Physics.Raycast(transform.position + transform.up *2, transform.position + transform.up *1 , out agachado, 8))
+            if (Physics.Raycast(transform.position + transform.up, transform.position + transform.up*1, out agachado, 10))
             {
                 print(agachado.collider.transform.tag);
                 
