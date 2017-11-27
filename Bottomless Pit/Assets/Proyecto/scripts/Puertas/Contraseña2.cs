@@ -62,13 +62,11 @@ void OnGUI()
 			Tocar.enabled = false;
 			keypadScreen = true;
 			onTrigger = false;
-			/*
-			Imagen1.enabled = true;	
-			Imagen2.enabled = true;
-			Imagen3.enabled = true;
-			Imagen4.enabled = true;
-			Imagen5.enabled = true;
-			Imagen6.enabled = true;*/
+			
+	
+
+
+
 		}
 	}
 
@@ -77,32 +75,32 @@ void OnGUI()
 	{
 
 
-		if(GUI.Button (new Rect (225, 145, 50, 50), " "))
+			if(GUI.Button (new Rect (225, 145, 50, 50), Imagen1))
 		{
 
 			input = input + "9";
 		}
-		if(GUI.Button (new Rect (315, 145, 50, 50), " "))
+			if(GUI.Button (new Rect (315, 145, 50, 50), Imagen2))
 		{
 
 			input = input + "5";
 		}
-		if(GUI.Button (new Rect (405, 145, 50, 50), " "))
+			if(GUI.Button (new Rect (405, 145, 50, 50), Imagen3))
 		{
 
 			input = input + "3";
 		}
-		if(GUI.Button (new Rect (225, 195, 50, 50), " "))
+			if(GUI.Button (new Rect (225, 195, 50, 50),Imagen4))
 		{
 
 				input = input + "6";
 		}
-		if(GUI.Button (new Rect (315, 195, 50, 50), " "))
+			if(GUI.Button (new Rect (315, 195, 50, 50), Imagen5))
 		{
 
 				input = input + "8";
 		}
-		if(GUI.Button (new Rect (405, 195, 50, 50), " "))
+			if(GUI.Button (new Rect (405, 195, 50, 50), Imagen6))
 		{
 
 				input = input + "4";
