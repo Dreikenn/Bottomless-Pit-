@@ -16,6 +16,7 @@ TagManager:
   - linterna
   - Seguro
   - Pared
+  - checkpoint
   layers:
   - Default
   - TransparentFX
